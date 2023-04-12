@@ -12,29 +12,12 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <quarkus-plugin.version>2-crac</quarkus-plugin.version>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-    <quarkus.platform.version>2-crac</quarkus.platform.version>
-    <surefire-plugin.version>2.22.1</surefire-plugin.version>
-  </properties>
+    <quarkus.platform.version>2.16.5.Final</quarkus.platform.version>
+    <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
 
-  <repositories>
-    <repository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/crac/quarkus</url>
-    </repository>
-    <repository>
-      <id>github2</id>
-      <url>https://maven.pkg.github.com/crac/org.crac</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/crac/quarkus</url>
-    </pluginRepository>
-  </pluginRepositories>
+  </properties>
 
   <dependencyManagement>
     <dependencies>

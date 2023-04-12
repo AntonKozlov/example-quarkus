@@ -37,7 +37,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-:  
 
-    - run: mvn -B package -s settings.xml -DskipTests
+    - run: mvn -B package -DskipTests
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
