@@ -18,18 +18,19 @@ jobs:
         apt-get -y --no-install-recommends install
           siege
 
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Checkout utils
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         repository: CRaC/utils
         path: utils
 
-    - name: Set up JDK 1.8
-      uses: actions/setup-java@v1
+    - name: Set up JDK 17
+      uses: actions/setup-java@v2
       with:
-        java-version: 1.8
+        java-version: 17
+        distribution: zulu
     - uses: actions/cache@v2
       with:
         path: ~/.m2/repository
@@ -45,7 +46,7 @@ jobs:
       run: |
         P=$(utils/start-bg.sh \
           -s "Installed features" \
-          java -jar target/example-quarkus-1.0-SNAPSHOT-runner.jar)
+          java -jar target/quarkus-app/quarkus-run.jar)
         curl localhost:8080/hello | grep "hello"
         utils/bench.sh http://localhost:8080/hello
         kill $P
